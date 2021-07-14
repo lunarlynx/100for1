@@ -1,0 +1,256 @@
+@font-face {
+    font-family: 'Matricha';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Matricha'), local('Matricha-Regular'),
+    url(fonts/matricha.woff) format('woff'),
+    url(fonts/matricha.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Partner';
+    font-style: normal;
+    font-weight: 400;
+    src: url(fonts/partner-light.otf);
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial;
+    background: rgb(124, 235, 234);
+    background: linear-gradient(90deg, rgba(124, 235, 234, 1) 0%, rgba(255, 115, 37, 1) 7%, rgba(255, 255, 255, 1) 8%, rgba(255, 115, 37, 1) 10%, rgba(157, 250, 246, 1) 15%, rgba(2, 78, 244, 1) 30%, rgba(232, 224, 254, 1) 50%, rgba(4, 75, 254, 1) 70%, rgba(130, 241, 239, 1) 85%, rgba(254, 110, 27, 1) 90%, rgba(255, 255, 255, 1) 92%, rgba(254, 110, 27, 1) 94%, rgba(94, 229, 241, 1) 100%);
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.App, #root {
+    height: 100%;
+}
+
+.gameBoard {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+
+}
+
+.gameBoard .questionsField {
+    display: flex;
+    flex-direction: row;
+    flex-basis: fit-content;
+    width: 96%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gameBoard .answersField {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    border: 30px solid #f0fffb;
+    padding: 10px;
+    box-shadow: 0 0 10px #002547;
+    border-radius: 4px;
+}
+
+.gameBoard .answersField .answersField__answers {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+.gameBoard .answersField .answersField__answers.bigGameField {
+    flex-direction: row;
+}
+
+.gameBoard .answersField .answersField__answers--bigGameLeft {
+    margin-right: 4px;
+}
+
+.gameBoard .answersField .answersField__answers--bigGameLeft {
+    margin-left: 4px;
+}
+
+.gameBoard .answersField .answersField__answers .answersField__answersContainer {
+    margin: 4px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #4a5f61;
+    background: #000000;
+    text-align: center;
+    min-height: 36px;
+    max-height: 45px;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.gameBoard .answersField .answersField__answers .answersField__answers--answer {
+    background: rgb(220, 154, 53);
+    background: linear-gradient(90deg, rgba(220, 154, 53, 1) 0%, rgba(239, 202, 96, 1) 2%, rgba(220, 154, 53, 1) 5%, rgba(239, 202, 96, 1) 8%, rgba(220, 154, 53, 1) 12%, rgba(239, 202, 96, 1) 20%, rgba(220, 154, 53, 1) 30%, rgba(220, 154, 53, 1) 70%, rgba(239, 202, 96, 1) 80%, rgba(220, 154, 53, 1) 88%, rgba(239, 202, 96, 1) 92%, rgba(220, 154, 53, 1) 95%, rgba(239, 202, 96, 1) 98%, rgba(220, 154, 53, 1) 100%);
+    padding: 0 8px;
+    width: 100%;
+    color: #002548;
+    border-radius: 10px;
+    border: 1px solid #4a5f61;
+    text-align: center;
+    min-height: 36px;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    transform: rotateX(0deg);
+}
+
+@keyframes rotateAnswer {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    50% {
+        transform: rotateX(180deg);
+        background: transparent;
+    }
+
+    100% {
+        transform: rotateX(360deg);
+    }
+}
+
+.gameBoard .answersField .answersField__answers .answersField__answers--answer .answerNumber {
+    background: #ff412b;
+    color: #f1f1f1;
+    padding: 4px 8px;
+    font-family: arial;
+    font-size: 50px;
+    font-weight: bold;
+    line-height: .7;
+    width: 50px;
+    border-left: 6px solid #e9ba52;
+    border-right: 6px solid #e9ba52;
+}
+
+.gameBoard .answersField .answersField__answers .answersField__answers--answer .answerText {
+    display: none;
+    font-size: 30px;
+    color: #f1f1f1;
+    font-weight: bold;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-family: 'Partner', sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.gameBoard .answersField .answersField__answers .answersField__answers--answer.unCover {
+    animation: rotateAnswer .5s;
+    transition: .5s ease background;
+    background: transparent;
+}
+
+.gameBoard .answersField .answersField__answers .answersField__answers--answer.unCover .answerNumber {
+    display: none;
+}
+
+.gameBoard .answersField .answersField__answers .answersField__answers--answer.unCover .answerText {
+    display: inline-flex;
+}
+
+[class*="Score"] {
+    font-family: 'Matricha', arial;
+}
+
+.gameBoard .totalScore,
+.gameBoard .leftBandScore,
+.gameBoard .rightBandScore {
+    padding: 20px;
+    width: 170px;
+    background: #002548;
+    margin: 8px
+}
+
+.gameBoard .leftBandScore,
+.gameBoard .rightBandScore {
+    background: #188fcf;
+}
+
+.gameBoard .totalScore .totalScore__window,
+.gameBoard .leftBandScore .leftBandScore__window,
+.gameBoard .rightBandScore .rightBandScore__window {
+    padding: 4px;
+    background: #000;
+    color: #b3af8b;
+    font-size: 40px;
+}
+
+
+.gameBoard .answersField .leftBandErrors,
+.gameBoard .answersField .rightBandErrors {
+    display: flex;
+    flex-direction: column;
+    margin: 0 40px;
+}
+
+.errors {
+    padding: 0;
+    margin: 0 auto;
+}
+
+.errors li {
+    display: block;
+    width: 80px;
+    margin: 8px auto;
+    background: #c88e34;
+    height: 50px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: .3s cubic-bezier(0.4, 0, 0.2, 1) all;
+}
+
+.errors li:after,
+.errors li:before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 100px;
+    background: #b42413;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.errors li:after {
+    transform: translateX(50%) rotate(-63deg) translateY(-50%);
+    left: 100%;
+}
+
+.errors li:before {
+    transform: translateX(-50%) rotate(60deg) translateY(-50%);
+}
+
+.errors li.active {
+    background: #ffad2e;
+    box-shadow: 0 0 10px #503f12;
+    transition: .3s cubic-bezier(0.4, 0, 0.2, 1) all;
+}
+
+.errors li.active:after,
+.errors li.active:before {
+    background: #ff412b;
+}
+
