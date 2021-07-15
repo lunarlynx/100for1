@@ -254,3 +254,51 @@ body {
     background: #ff412b;
 }
 
+.controlsWrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.controlsWrapper .controlsWrapper__gameButton {
+    padding: 8px 16px;
+    outline: 0;
+    border: 4px solid #1790cf;
+    background: #002547;
+    color: #f1f1f1;
+    font-size: 16px;
+    font-weight: normal;
+    border-radius: 2px;
+    margin: 8px 16px;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.controlsWrapper .controlsWrapper__gameButton.nextRound {
+    padding: 16px 24px;
+    font-size: 24px;
+    background: #ff422a;
+}
+
+.controlsWrapper .controlsWrapper__gameButton:hover {
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    transition: .3s ease all;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+

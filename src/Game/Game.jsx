@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import questions from "../json/questions.json";
+import Controls from "./Controls";
 
 const Game = () => {
 
@@ -73,6 +74,7 @@ const Game = () => {
                     </div>
                 </div>
             </div>
+            <Controls/>
         </div>
     )
 }
