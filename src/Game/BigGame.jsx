@@ -39,30 +39,107 @@ const BigGame = () => {
                     <div className="answersField__answers bigGameField">
                         <div className="answersField__answers--bigGameLeft">
                             {/* Ответы первого игрока */}
-                            {answersArray1.map((item) => (
-                                <div className="answersField__answersContainer">
-                                    <button className="answersField__answers--answer unCover">
+                            <div className="answersField__answersContainer">
+                                <div className="answersField__answers--answer unCover">
                                     <span className="answerText">
-                                        <span className="answerText__text">{item[1]}</span>
-                                        <span className="answerText__dig">{item[2]}</span>
+                                        <input className="text" />
+                                        <input className="number" />
                                     </span>
-                                    </button>
                                 </div>
-                            ))}
+                            </div>
+                            <div className="answersField__answersContainer">
+                                <div className="answersField__answers--answer unCover">
+                                    <span className="answerText">
+                                        <input className="text" />
+                                        <input className="number" />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="answersField__answersContainer">
+                                <div className="answersField__answers--answer unCover">
+                                    <span className="answerText">
+                                        <input className="text" />
+                                        <input className="number" />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="answersField__answersContainer">
+                                <div className="answersField__answers--answer unCover">
+                                    <span className="answerText">
+                                        <input className="text" />
+                                        <input className="number" />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="answersField__answersContainer">
+                                <div className="answersField__answers--answer unCover">
+                                    <span className="answerText">
+                                        <input className="text" />
+                                        <input className="number" />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="answersField__answersContainer">
+                                <div className="answersField__answers--answer unCover">
+                                    <span className="answerText">
+                                        <input className="text" />
+                                        <input className="number" />
+                                    </span>
+                                </div>
+                            </div>
+
                         </div>
 
                         <div className="answersField__answers--bigGameLeft">
                             {/* Ответы второго игрока */}
-                            {answersArray1.map((item) => (
-                                <div className="answersField__answersContainer">
-                                    <button className="answersField__answers--answer unCover">
+                            <div className="answersField__answersContainer">
+                                <div className="answersField__answers--answer unCover">
                                     <span className="answerText">
-                                        <span className="answerText__text">{item[1]}</span>
-                                        <span className="answerText__dig">{item[2]}</span>
+                                        <input className="text" />
+                                        <input className="number" />
                                     </span>
-                                    </button>
                                 </div>
-                            ))}
+                            </div>
+                            <div className="answersField__answersContainer">
+                                <div className="answersField__answers--answer unCover">
+                                    <span className="answerText">
+                                        <input className="text" />
+                                        <input className="number" />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="answersField__answersContainer">
+                                <div className="answersField__answers--answer unCover">
+                                    <span className="answerText">
+                                        <input className="text" />
+                                        <input className="number" />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="answersField__answersContainer">
+                                <div className="answersField__answers--answer unCover">
+                                    <span className="answerText">
+                                        <input className="text" />
+                                        <input className="number" />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="answersField__answersContainer">
+                                <div className="answersField__answers--answer unCover">
+                                    <span className="answerText">
+                                        <input className="text" />
+                                        <input className="number" />
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="answersField__answersContainer">
+                                <div className="answersField__answers--answer unCover">
+                                    <span className="answerText">
+                                        <input className="text" />
+                                        <input className="number" />
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

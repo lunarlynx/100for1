@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import questions from "../json/questions.json";
 import Controls from "./Controls";
+import AnswerPanel from "./AnswerPanel";
 
 const Game = () => {
 
@@ -10,18 +11,15 @@ const Game = () => {
     //просто хотела вывести пример ответов
     const answersArray1 = answersArray[0];
 
-    //по идее переключает состояние плашечки
-    const [answerCover, setAnswerCover] = useState(false);
-    const showAnswerHandler = () => {
-        setAnswerCover(true);
-    }
+    //считаем очки в банк
+    const [bankValue, setBankValue] = useState(0);
 
     return (
         <div className="gameBoard">
             <div className="totalScore">
                 <div className="totalScore__window">
                     {/*Сюда складываются очки из плашечек*/}
-                    <span className="totalScore__window--value">200</span>
+                    <span className="totalScore__window--value">{bankValue}</span>
                 </div>
             </div>
             <div className="questionsField">
@@ -44,17 +42,7 @@ const Game = () => {
                     <div className="answersField__answers">
                         {/*Сюда выводятся все ответы с цифрами. Если их больше 6, то ничего страшного*/}
                         {answersArray1.map((item) => (
-                            <div className="answersField__answersContainer">
-                                <button
-                                    className={answerCover ? 'answersField__answers--answer unCover' : 'answersField__answers--answer'}
-                                    onClick={showAnswerHandler}>
-                                    <span className="answerNumber">{item[0]}</span>
-                                    <span className="answerText">
-                                        <span className="answerText__text">{item[1]}</span>
-                                        <span className="answerText__dig">{item[2]}</span>
-                                    </span>
-                                </button>
-                            </div>
+                           <AnswerPanel item={item} setBankValue={bankValue} />
                         ))}
                     </div>
                     <div className="rightBandErrors">
