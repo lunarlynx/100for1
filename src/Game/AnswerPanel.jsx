@@ -1,37 +1,34 @@
-import React, {useState} from "react";
+import React, {useState} from 'react';
 
-const AnswerPanel = ({item, setBankValue}) => {
+const AnswerPanel = ({item, updateRoundScore}) => {
 
-    //по идее переключает состояние плашечки
-    const [answerCover, setAnswerCover] = useState('answersField__answers--answer');
+  //по идее переключает состояние плашечки
+  const [open, setOpen] = useState(false);
 
-    const [bankT, setBankT] = useState(setBankValue);
-    const showAnswerHandler = () => {
-        setAnswerCover('answersField__answers--answer unCover');
+  const showAnswerHandler = () => {
+    if (open) return;
+    setOpen(true);
+    updateRoundScore(item[2])
+  }
 
-        setBankT(bankT + item[2]);
-    }
-    console.log(bankT);
-
-
-    return (
-        <>
-            <div className="answersField__answersContainer">
-                <button
-                    className={answerCover}
-                    onClick={showAnswerHandler}>
-                    <span className="answerNumber">{item[0]}</span>
-                    <span className="answerText">
+  return (
+    <>
+      <div className="answersField__answersContainer">
+        <button
+          className={open ? 'answersField__answers--answer unCover' : 'answersField__answers--answer'}
+          onClick={showAnswerHandler}>
+          <span className="answerNumber">{item[0]}</span>
+          <span className="answerText">
                 <span className="answerText__text">{item[1]}</span>
                 <span className="answerText__dig">{item[2]}</span>
             </span>
-                </button>
-            </div>
+        </button>
+      </div>
 
-        </>
+    </>
 
 
-    )
+  )
 }
 
 export default AnswerPanel;
