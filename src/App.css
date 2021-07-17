@@ -30,6 +30,12 @@ body {
     box-sizing: border-box;
 }
 
+h1, h2 {
+    color: #002647;
+    font-size: 30px;
+    font-weight: bold;
+}
+
 .App, #root {
     height: 100%;
 }
@@ -323,4 +329,8 @@ input.number {
     100% {
         background-position: 0% 50%;
     }
+}
+
+.blurOn {
+    filter: blur(7px);
 }

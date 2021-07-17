@@ -3,9 +3,8 @@ import questions from '../json/questions.json';
 import Controls from './Controls';
 import AnswerPanel from './AnswerPanel';
 import BigGame from './BigGame';
+import {Error} from './Error';
 
-//todo сделать тайтл (большая игра, игра наоборот в зависимости от значений)
-//todo сделать блюр чтобы скрывать ответы в большой игре
 
 const Game = () => {
 
@@ -21,6 +20,7 @@ const Game = () => {
 
   return (
     roundNumber <= 1 ? (<div className="gameBoard">
+      <h2>[{roundNumber === 0 ? "Простая игра" : "Игра наоборот"}]</h2>
       <div className="totalScore">
         <div className="totalScore__window">
           {/*Сюда складываются очки из плашечек*/}
@@ -39,9 +39,9 @@ const Game = () => {
           <div className="leftBandErrors">
             <ul className="errors">
               {/*При промахе первой команды ставь класс active на бочонок*/}
-              <li className="errors__error--1"/>
-              <li className="errors__error--2 active"/>
-              <li className="errors__error--3 active"/>
+              <Error />
+              <Error />
+              <Error />
             </ul>
           </div>
           <div className="answersField__answers">
@@ -53,9 +53,9 @@ const Game = () => {
           <div className="rightBandErrors">
             <ul className="errors">
               {/*При промахе второй команды ставь класс active на бочонок*/}
-              <li className="errors__error--1"/>
-              <li className="errors__error--2"/>
-              <li className="errors__error--3 active"/>
+              <Error />
+              <Error />
+              <Error />
             </ul>
           </div>
         </div>

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-
+import openSound from '../sounds/success.mp3';
 const AnswerPanel = ({item, updateRoundScore}) => {
 
   //по идее переключает состояние плашечки
@@ -8,7 +8,11 @@ const AnswerPanel = ({item, updateRoundScore}) => {
   const showAnswerHandler = () => {
     if (open) return;
     setOpen(true);
-    updateRoundScore(item[2])
+    updateRoundScore(item[2]);
+    setImmediate(() => {
+      let sound = new Audio(openSound);
+      sound.play();
+    })
   }
 
   return (

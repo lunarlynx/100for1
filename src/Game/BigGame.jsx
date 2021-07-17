@@ -1,4 +1,6 @@
 import React, {useState} from 'react';
+import {BigGameError} from './BigGameError';
+import {Timer} from './Timer';
 
 const BigGame = () => {
 
@@ -11,7 +13,7 @@ const BigGame = () => {
   const [rightScore, setRightScope] = useState(0);
   const [leftNumbers, setLeftNumbers] = useState([]);
   const [rightNumbers, setRightNumbers] = useState([]);
-  const numberOfQuestions = 6;
+  const numberOfQuestions = 5;
 
   let leftBlocks = [];
   let rightBlocks = [];
@@ -47,6 +49,7 @@ const BigGame = () => {
 
   return (
     <div className="gameBoard">
+      <h2>[Большая игра]</h2>
       <div className="totalScore">
         <div className="totalScore__window">
           {/*Сюда складываются очки из плашечек*/}
@@ -64,7 +67,8 @@ const BigGame = () => {
         <div className="answersField">
           <div className="answersField__answers bigGameField">
 
-            <div className="answersField__answers--bigGameLeft">
+            <div
+              className={hidden ? 'answersField__answers--bigGameLeft blurOn' : 'answersField__answers--bigGameLeft'}>
               {leftBlocks}
             </div>
 
@@ -82,8 +86,13 @@ const BigGame = () => {
         </div>
       </div>
       <div className="controlsWrapper">
-        <button onClick={() => setHidden(!hidden)}
-                className="controlsWrapper__gameButton nextRound">{hidden ? 'Показать' : 'Скрыть'}</button>
+        <BigGameError/>
+        <button onClick={() => {
+          setHidden(!hidden)
+        }}
+                className="controlsWrapper__gameButton nextRound">{hidden ? 'Показать' : 'Скрыть'}
+        </button>
+        <Timer />
       </div>
     </div>
   )
