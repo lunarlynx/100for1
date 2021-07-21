@@ -49,7 +49,7 @@ const BigGame = () => {
 
   return (
     <div className="gameBoard">
-      <h2>[Большая игра]</h2>
+      <h2>[Big game]</h2>
       <div className="totalScore">
         <div className="totalScore__window">
           {/*Сюда складываются очки из плашечек*/}
@@ -90,7 +90,7 @@ const BigGame = () => {
         <button onClick={() => {
           setHidden(!hidden)
         }}
-                className="controlsWrapper__gameButton nextRound">{hidden ? 'Показать' : 'Скрыть'}
+                className="controlsWrapper__gameButton nextRound">{hidden ? 'Show' : 'Hide'}
         </button>
         <Timer />
       </div>

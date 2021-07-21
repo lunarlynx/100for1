@@ -20,7 +20,7 @@ const Game = () => {
 
   return (
     roundNumber <= 1 ? (<div className="gameBoard">
-      <h2>[{roundNumber === 0 ? "Простая игра" : "Игра наоборот"}]</h2>
+      <h2>[{roundNumber === 0 ? "Simple game" : "Reverse game"}]</h2>
       <div className="totalScore">
         <div className="totalScore__window">
           {/*Сюда складываются очки из плашечек*/}

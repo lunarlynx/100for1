@@ -10,5 +10,5 @@ export const BigGameError = () => {
       sound.play();
     })
 
-  }} className="controlsWrapper__gameButton nextRound">Повтор</button>
+  }} className="controlsWrapper__gameButton nextRound">Repeat!</button>
 }

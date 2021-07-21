@@ -8,5 +8,5 @@ export const Timer = () => {
       sound.play();
     })
 
-  }} className="controlsWrapper__gameButton nextRound">Таймер</button>
+  }} className="controlsWrapper__gameButton nextRound">Timer</button>
 }

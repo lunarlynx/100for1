@@ -1,5 +1,7 @@
 # Family Feud (Russian edition 100 к 1)
 
+![Example blind](md/100for1.png)
+
 ## Simple game
 All answers are written in json. When you open the card, points are added to the bank. Accrue all points from the bank to the winning team.
 
@@ -13,7 +15,7 @@ The sum of all matches from both columns will go to the bank.
 The team won if it scored more than 200 points.
 
 ## Other variants
-You can add double and triple play based on simple play.
+You can add double and triple game based on simple game.
 
 ## Sounds from original tv-show
 - right answer
