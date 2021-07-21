@@ -1,4 +1,4 @@
-# Family Feud (Russian edition)
+# Family Feud (Russian edition 100 к 1)
 
 ## Simple game
 All answers are written in json. When you open the card, points are added to the bank. Accrue all points from the bank to the winning team.
